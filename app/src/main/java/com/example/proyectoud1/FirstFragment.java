@@ -77,17 +77,8 @@ public class FirstFragment extends Fragment {
 
                 txtListName.setText(planetitas.getTitle());
 
-                Picasso.get().load(planetitas.getHdurl()).into(imageView, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        // La imagen se ha cargado con éxito, ahora está en caché
-                    }
-
-                    @Override
-                    public void onError(Exception e) {
-                        // Maneja errores si la descarga falla
-                    }
-                });
+                Picasso.get().load(planetitas.getHdurl()).into(imageView);{
+                }
 
                 return itemView;
             }
