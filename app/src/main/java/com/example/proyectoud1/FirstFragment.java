@@ -19,6 +19,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.preference.PreferenceManager;
 
 import com.example.proyectoud1.databinding.FragmentFirstBinding;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -26,7 +27,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class FirstFragment extends Fragment {
-//PROYECTO UNIDAD 1 CON LA NASA https://api.nasa.gov/planetary/apod?api_key=mBZ5Hr3Glv3ZkdE3xApJVbUoRKJF8MaOkG7UAdPt&count=20
+    // PROYECTO UNIDAD 1 CON LA NASA
+    // https://api.nasa.gov/planetary/apod?api_key=mBZ5Hr3Glv3ZkdE3xApJVbUoRKJF8MaOkG7UAdPt
     private FragmentFirstBinding binding;
     private ArrayAdapter<Planetas> adapter;
 
@@ -35,15 +37,14 @@ public class FirstFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentFirstBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     @Override
@@ -76,7 +77,17 @@ public class FirstFragment extends Fragment {
 
                 txtListName.setText(planetitas.getTitle());
 
-                Picasso.get().load(planetitas.getHdurl()).into(imageView);
+                Picasso.get().load(planetitas.getHdurl()).into(imageView, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                        // La imagen se ha cargado con éxito, ahora está en caché
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        // Maneja errores si la descarga falla
+                    }
+                });
 
                 return itemView;
             }
@@ -89,7 +100,7 @@ public class FirstFragment extends Fragment {
     }
 
     private void refresh() {
-        Toast.makeText(getContext(), "Refreshing...", Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "Refrescando...", Toast.LENGTH_LONG).show();
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
 
@@ -117,5 +128,4 @@ public class FirstFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

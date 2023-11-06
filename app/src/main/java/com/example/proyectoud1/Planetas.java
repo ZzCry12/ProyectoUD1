@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Planetas implements Serializable {
 
-    private Date date;
+    private String date;
     private String explanation;
     private String hdurl;
     private String title;
@@ -19,11 +19,11 @@ public class Planetas implements Serializable {
         this.detailsUrl = detailsUrl;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
