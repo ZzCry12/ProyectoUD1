@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.proyectoud1.databinding.FragmentSecondBinding;
+import com.squareup.picasso.Picasso;
+
+import java.util.Locale;
 
 public class SecondFragment extends Fragment {
 
@@ -29,13 +32,22 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+        Bundle args = getArguments();
+
+        if (args != null) {
+            Planetas planetitas = (Planetas) args.getSerializable("planetitas");
+            if (planetitas != null) {
+                binding.tituloplanetas.setText(planetitas.getTitle().toUpperCase(Locale.ROOT));
+                binding.explicacionplanetas.setText(planetitas.getExplanation().toUpperCase(Locale.ROOT));
+
+                String imageUrl = planetitas.getHdurl();
+                if (imageUrl != null && !imageUrl.isEmpty()) {
+                    Picasso.get().load(planetitas.getHdurl()).into(binding.imgplanetas);
+                } else {
+                    System.out.println("NO SE HA ENCONTRADO NINGUNA IMAGEN");
+                }
             }
-        });
+        }
     }
 
     @Override

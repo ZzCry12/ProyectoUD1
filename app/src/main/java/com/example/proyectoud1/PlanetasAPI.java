@@ -14,27 +14,15 @@ public class PlanetasAPI {
         try {
             String result = HttpUtils.get(url);
 
-
-            JSONObject jsonResult = new JSONObject(result);
-            JSONArray results = jsonResult.getJSONArray("results");
-
+            JSONArray results = new JSONArray(result);
             ArrayList<Planetas> listaPlanetas = new ArrayList<>();
 
-            for (int i = 0; i < result.length(); i++) {
+            for (int i = 0; i < results.length(); i++) {
                 try {
-
                     JSONObject planetasJson = results.getJSONObject(i);
-
                     Planetas planeta = new Planetas();
                     planeta.setTitle(planetasJson.getString("title"));
-
-                    JSONObject sprites = jsonResult.getJSONObject("sprites");
-                    String spriteDefault = sprites.getString("front_default");
-
-                    //planeta.setDate(jsonResult.getDouble("height"));
-                    planeta.setHdurl(spriteDefault);
-
-
+                    planeta.setHdurl(planetasJson.getString("url"));
                     listaPlanetas.add(planeta);
                 } catch (Exception e) {
                     e.printStackTrace();

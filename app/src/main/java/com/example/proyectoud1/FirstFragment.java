@@ -69,14 +69,14 @@ public class FirstFragment extends Fragment {
                     itemView = getLayoutInflater().inflate(R.layout.lv_planetas_row, parent, false);
                 }
 
-                Planetas pokemon = items.get(position);
+                Planetas planetitas = items.get(position);
 
                 ImageView imageView = itemView.findViewById(R.id.imageViewPlanetas);
                 TextView txtListName = itemView.findViewById(R.id.txtplanetas);
 
-                txtListName.setText(pokemon.getTitle());
+                txtListName.setText(planetitas.getTitle());
 
-                Picasso.get().load(pokemon.getHdurl()).into(imageView);
+                Picasso.get().load(planetitas.getHdurl()).into(imageView);
 
                 return itemView;
             }
