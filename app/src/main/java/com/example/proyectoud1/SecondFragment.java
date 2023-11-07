@@ -44,8 +44,9 @@ public class SecondFragment extends Fragment {
         if (args != null) {
             Planetas planetitas = (Planetas) args.getSerializable("planetas");
             if (planetitas != null) {
+                binding.titulofoto.setText(planetitas.getTitle().toUpperCase(Locale.ROOT));
                 binding.txtplanetas.setText(planetitas.getExplanation());
-             //   binding.explicacionplanetas.setText(planetitas.getExplanation().toUpperCase(Locale.ROOT));
+                binding.copyright.setText("Copyright: " + planetitas.getCopyright());
 
                 String imageUrl = planetitas.getHdurl();
                 if (imageUrl != null && !imageUrl.isEmpty()) {

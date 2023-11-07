@@ -23,6 +23,9 @@ public class PlanetasAPI {
                     Planetas planeta = new Planetas();
                     planeta.setTitle(planetasJson.getString("title"));
                     planeta.setHdurl(planetasJson.getString("url"));
+                    planeta.setExplanation(planetasJson.getString("explanation"));
+                    planeta.setDate(planetasJson.getString("date"));
+                    planeta.setCopyright(planetasJson.getString("copyright"));
                     listaPlanetas.add(planeta);
                 } catch (Exception e) {
                     e.printStackTrace();

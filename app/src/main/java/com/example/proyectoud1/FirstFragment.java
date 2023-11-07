@@ -51,10 +51,6 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(requireContext());
-        String type = preferences.getString("tipo", "");
-        Toast.makeText(getContext(), "Tipo: " + type, Toast.LENGTH_LONG).show();
-
         ArrayList<Planetas> items = new ArrayList<>();
 
         adapter = new ArrayAdapter<Planetas>(
@@ -74,9 +70,10 @@ public class FirstFragment extends Fragment {
 
                 ImageView imageView = itemView.findViewById(R.id.imageViewPlanetas);
                 TextView txtListName = itemView.findViewById(R.id.txtplanetas);
+                TextView txtfecha = itemView.findViewById(R.id.txtdate);
 
                 txtListName.setText(planetitas.getTitle());
-
+                txtfecha.setText(planetitas.getDate());
                 Picasso.get().load(planetitas.getHdurl()).into(imageView);{
                 }
 

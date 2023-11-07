@@ -9,15 +9,17 @@ public class Planetas implements Serializable {
     private String explanation;
     private String hdurl;
     private String title;
-    private String detailsUrl;
+    private String copyright;
 
-    public String getDetailsUrl() {
-        return detailsUrl;
+    public String getCopyright() {
+        return copyright;
     }
 
-    public void setDetailsUrl(String detailsUrl) {
-        this.detailsUrl = detailsUrl;
+    public void setCopyright(String copyright) {
+        this.copyright = copyright;
     }
+
+
 
     public String getDate() {
         return date;
@@ -58,6 +60,7 @@ public class Planetas implements Serializable {
                 ", explanation='" + explanation + '\'' +
                 ", hdurl='" + hdurl + '\'' +
                 ", title='" + title + '\'' +
+                ", title='" + copyright + '\'' +
                 '}';
     }
 
