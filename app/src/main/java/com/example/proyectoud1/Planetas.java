@@ -8,7 +8,7 @@ import java.util.Date;
 @Entity
 public class Planetas implements Serializable {
 
-
+    //ATRIBUTOS PARA GUARDAR LA INFO CUANDO SE EXTRAE DATOS DEL JSON DE LOS PLANETAS
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String date;
@@ -16,6 +16,8 @@ public class Planetas implements Serializable {
     private String hdurl;
     private String title;
     private String copyright;
+
+    //GETTERS Y SETTERS
 
     public int getId() {
         return id;
@@ -65,6 +67,8 @@ public class Planetas implements Serializable {
         this.title = title;
     }
 
+
+    //TOSTRING PARA QUE ME IMPRIMA POR CONSOLA LOS DATOS EXRAIDOS DEL JSON
     @Override
     public String toString() {
         return "Planetas{" +

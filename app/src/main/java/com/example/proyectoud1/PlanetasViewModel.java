@@ -11,6 +11,7 @@ import androidx.preference.PreferenceManager;
 import java.util.ArrayList;
 import java.util.List;
 
+/*VIEWMODEL DE LOS PLANETAS*/
 public class PlanetasViewModel extends AndroidViewModel {
     private final Application app;
     private final PlanetasDB appDatabase;

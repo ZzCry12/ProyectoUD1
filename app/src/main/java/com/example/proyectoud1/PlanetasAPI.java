@@ -8,9 +8,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class PlanetasAPI {
+
     ArrayList<Planetas> getPlanetas() {
+
+        //URL DE LA API DEL JSON DE NASA
         String url = "https://api.nasa.gov/planetary/apod?api_key=mBZ5Hr3Glv3ZkdE3xApJVbUoRKJF8MaOkG7UAdPt&count=20";
 
+
+        //AQUI REALIZA SOLICITUD LUEGO CONVERTE LA RESPUESTA EN JSONARRAY, OBTIENE LOS OBJETOS DEL JSON, LOS CREA Y LOS AÑADE A LA LISTA DE PLANETAS
         try {
             String result = HttpUtils.get(url);
 
