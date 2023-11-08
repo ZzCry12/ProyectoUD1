@@ -1,0 +1,190 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "androidx.room",
+    "module": "room-compiler",
+    "version": "2.4.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "room-compiler-2.4.3.jar",
+          "url": "room-compiler-2.4.3.jar",
+          "size": 3736537,
+          "sha512": "7a0de7934195cd7b6b03e909a0f34b195ab21dc57a233ff897de5ae04f3ec2ac48aefd1b010763ff61111ed4fb2a890d551109f02feef9ef501ac6748ca2467a",
+          "sha256": "129779e7d6be19f9273cf66e8814aba1be360bce7bc76baea2b11f25d0447ec0",
+          "sha1": "1d3d66d710fda90f643b3f63ce086e4f401f71ae",
+          "md5": "e81b8fa5bd639479831a8b7fa513fbad"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.room",
+          "module": "room-common",
+          "version": {
+            "requires": "2.4.3"
+          }
+        },
+        {
+          "group": "androidx.room",
+          "module": "room-migration",
+          "version": {
+            "requires": "2.4.3"
+          }
+        },
+        {
+          "group": "androidx.room",
+          "module": "room-compiler-processing",
+          "version": {
+            "requires": "2.4.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.7.0"
+          }
+        },
+        {
+          "group": "com.google.auto",
+          "module": "auto-common",
+          "version": {
+            "requires": "0.11"
+          }
+        },
+        {
+          "group": "com.google.auto.value",
+          "module": "auto-value-annotations",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "com.squareup",
+          "module": "javapoet",
+          "version": {
+            "requires": "1.13.0"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "symbol-processing-api",
+          "version": {
+            "requires": "1.7.0-1.0.6"
+          }
+        },
+        {
+          "group": "org.xerial",
+          "module": "sqlite-jdbc",
+          "version": {
+            "requires": "3.36.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-metadata-jvm",
+          "version": {
+            "requires": "0.5.0"
+          }
+        },
+        {
+          "group": "commons-codec",
+          "module": "commons-codec",
+          "version": {
+            "requires": "1.10"
+          }
+        },
+        {
+          "group": "com.intellij",
+          "module": "annotations",
+          "version": {
+            "requires": "12.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "room-compiler-2.4.3.jar",
+          "url": "room-compiler-2.4.3.jar",
+          "size": 3736537,
+          "sha512": "7a0de7934195cd7b6b03e909a0f34b195ab21dc57a233ff897de5ae04f3ec2ac48aefd1b010763ff61111ed4fb2a890d551109f02feef9ef501ac6748ca2467a",
+          "sha256": "129779e7d6be19f9273cf66e8814aba1be360bce7bc76baea2b11f25d0447ec0",
+          "sha1": "1d3d66d710fda90f643b3f63ce086e4f401f71ae",
+          "md5": "e81b8fa5bd639479831a8b7fa513fbad"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "room-compiler-2.4.3-sources.jar",
+          "url": "room-compiler-2.4.3-sources.jar",
+          "size": 446597,
+          "sha512": "d2da04f3dd817188e0c9206ef446ed20f48196929244ce0cea01b3a6fea651d165d2e08b19c8f74b2fb8ebb6c4db6d0f726e0a64a65a5716133899a10d64754b",
+          "sha256": "3afa50a97f4b121495af69deed31eff447bdddc67dd065850677b2f227f758d4",
+          "sha1": "f6883813f5c9d8c6dc46af569578a43917ab3aa1",
+          "md5": "089f03e72638f7da753525012c91cc67"
+        }
+      ]
+    },
+    {
+      "name": "shadowRuntimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "shadowed",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "room-compiler-2.4.3.jar",
+          "url": "room-compiler-2.4.3.jar",
+          "size": 3736537,
+          "sha512": "7a0de7934195cd7b6b03e909a0f34b195ab21dc57a233ff897de5ae04f3ec2ac48aefd1b010763ff61111ed4fb2a890d551109f02feef9ef501ac6748ca2467a",
+          "sha256": "129779e7d6be19f9273cf66e8814aba1be360bce7bc76baea2b11f25d0447ec0",
+          "sha1": "1d3d66d710fda90f643b3f63ce086e4f401f71ae",
+          "md5": "e81b8fa5bd639479831a8b7fa513fbad"
+        }
+      ]
+    }
+  ]
+}

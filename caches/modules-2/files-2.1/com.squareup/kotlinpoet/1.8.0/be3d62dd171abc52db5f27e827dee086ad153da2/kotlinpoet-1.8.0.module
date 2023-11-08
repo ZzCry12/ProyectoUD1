@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.squareup",
+    "module": "kotlinpoet",
+    "version": "1.8.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.8.2",
+      "buildId": "v2ehroujlvg5baawacpcv3f3m4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.4.31"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinpoet-1.8.0.jar",
+          "url": "kotlinpoet-1.8.0.jar",
+          "size": 298833,
+          "sha512": "9785eeee474d138c3ae95de43777e6052a5d939c723c4cea8a45c28d255045aea5f277954612a403c67fea92e88e29c0e50dd78add4459eb9f11515c15efadd6",
+          "sha256": "a4f7f1f1306a97740b2c18c6089cddf65626764c4cd848aa83363681268e57f0",
+          "sha1": "035091cdf46ea7e911e433f5269bcd73c8d536c9",
+          "md5": "65f20af3da203d3cfb3e6df924d7c260"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "1.4.31"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.4.31"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinpoet-1.8.0.jar",
+          "url": "kotlinpoet-1.8.0.jar",
+          "size": 298833,
+          "sha512": "9785eeee474d138c3ae95de43777e6052a5d939c723c4cea8a45c28d255045aea5f277954612a403c67fea92e88e29c0e50dd78add4459eb9f11515c15efadd6",
+          "sha256": "a4f7f1f1306a97740b2c18c6089cddf65626764c4cd848aa83363681268e57f0",
+          "sha1": "035091cdf46ea7e911e433f5269bcd73c8d536c9",
+          "md5": "65f20af3da203d3cfb3e6df924d7c260"
+        }
+      ]
+    }
+  ]
+}

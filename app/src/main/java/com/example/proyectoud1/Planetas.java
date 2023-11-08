@@ -1,15 +1,29 @@
 package com.example.proyectoud1;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 import java.util.Date;
-
+@Entity
 public class Planetas implements Serializable {
 
+
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String date;
     private String explanation;
     private String hdurl;
     private String title;
     private String copyright;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getCopyright() {
         return copyright;
@@ -18,8 +32,6 @@ public class Planetas implements Serializable {
     public void setCopyright(String copyright) {
         this.copyright = copyright;
     }
-
-
 
     public String getDate() {
         return date;
