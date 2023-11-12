@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,6 +36,7 @@ public class FirstFragment extends Fragment {
     // https://api.nasa.gov/planetary/apod?api_key=mBZ5Hr3Glv3ZkdE3xApJVbUoRKJF8MaOkG7UAdPt
     private FragmentFirstBinding binding;
     private ArrayAdapter<Planetas> adapter;
+    private ArrayList<Planetas> loadedPlanetas = new ArrayList<>();
 
     private PlanetasViewModel planetasViewModel;
     @Override
@@ -45,13 +47,10 @@ public class FirstFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_refresh) {
+            Log.d("MyFragment", "Refresh clicked"); // Verifica en Logcat
             refresh();
             return true;
         }
@@ -119,17 +118,26 @@ public class FirstFragment extends Fragment {
     }
 
     private void refresh() {
-        Toast.makeText(getContext(), "Refrescando...", Toast.LENGTH_LONG).show();
+        Log.d("MyFragment", "Refreshing..."); // Verifica en Logcat
+        // Resto de la lógica de actualización
+       // Toast.makeText(getContext(), "Refrescando...", Toast.LENGTH_LONG).show();
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
 
         executor.execute(() -> {
-            PlanetasAPI api = new PlanetasAPI();
-            ArrayList<Planetas> planetas = api.getPlanetas();
-            handler.post(() -> {
-                adapter.clear();
-                adapter.addAll(planetas);
-            });
+
+            if (loadedPlanetas.isEmpty()) {
+                PlanetasAPI api = new PlanetasAPI();
+                ArrayList<Planetas> planetas = api.getPlanetas();
+
+                handler.post(() -> {
+                    adapter.clear();
+                    adapter.addAll(planetas);
+                    loadedPlanetas.addAll(planetas);
+                });
+            } else {
+                handler.post(() -> adapter.addAll(loadedPlanetas));
+            }
 
             binding.listviewprincipal.setOnItemClickListener((adapter, fragment, position, id) -> {
                 Planetas planetitas = (Planetas) adapter.getItemAtPosition(position);
