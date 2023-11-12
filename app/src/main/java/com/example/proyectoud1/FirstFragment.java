@@ -120,7 +120,7 @@ public class FirstFragment extends Fragment {
     private void refresh() {
         Log.d("MyFragment", "Refreshing..."); // Verifica en Logcat
         // Resto de la lógica de actualización
-       // Toast.makeText(getContext(), "Refrescando...", Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "Refrescando...", Toast.LENGTH_LONG).show();
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
 
