@@ -46,19 +46,6 @@ public class FirstFragment extends Fragment {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_refresh) {
-            Log.d("MyFragment", "Refresh clicked"); // Verifica en Logcat
-            refresh();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
@@ -118,8 +105,7 @@ public class FirstFragment extends Fragment {
     }
 
     private void refresh() {
-        Log.d("MyFragment", "Refreshing..."); // Verifica en Logcat
-        // Resto de la lógica de actualización
+
         Toast.makeText(getContext(), "Refrescando...", Toast.LENGTH_LONG).show();
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());

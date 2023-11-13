@@ -23,9 +23,10 @@ public class FragmentoInicio extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ImageView imageView = view.findViewById(R.id.imageView2);
-        // Aquí debes reemplazar R.drawable.tu_imagen con el nombre de tu recurso de imagen
         imageView.setImageResource(R.drawable.nasa_6);
+
         Button btnNavigate = view.findViewById(R.id.button);
+
         btnNavigate.setOnClickListener(v -> {
             NavController navController = Navigation.findNavController(view);
             navController.navigate(R.id.action_welcomeFragment_to_FirstFragment);
